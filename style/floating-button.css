@@ -1,0 +1,151 @@
+.floating-container
+{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 0;
+    margin: 0 0 20px 0;
+    z-index: 100000000000;
+}
+.floating-container:hover
+{
+    height: 300px;
+}
+.floating-container:hover .floating-button
+{
+    transform: translateY(15px);
+    box-shadow: 0 0 10px var(--primary-color);
+    transition: all .3s;
+    transform: rotate(180deg);
+}
+.floating-button
+{
+    position: absolute;
+    width: 65px;
+    height: 65px;
+    background: var(--primary-color);
+    bottom: 0;
+    border-radius: 50%;
+    left: 0;
+    right: 0;
+    color: white;
+    line-height: 65px;
+    text-align: center;
+    font-size: 25px;
+    font-weight: 700;
+    z-index: 100;
+    box-shadow: 0 0px 10px 0px var(--primary-color);
+    cursor: pointer;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    transform: translateY(-10px);
+}
+.float-element
+{
+    position: relative;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    margin: 15px 0;
+    color: white;
+    display: grid;
+    place-items: center;
+    z-index: 0;
+    opacity: 0;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+    left: 0;
+    bottom: 0;
+}
+.float-element a 
+{
+    text-decoration: none;
+    color: white;
+}
+.float-element a i
+{
+    font-size: 20px;
+}
+/* .float-element:hover
+{
+    bottom: -5px;
+} */
+.float-element:nth-child(1)
+{
+    background: #1aa7ec;
+    transition: .3s ease-in-out;
+    box-shadow: 0 20px -10px var(--primary-color);
+}
+.float-element:nth-child(2)
+{
+    background: #25d366;
+    transition: .3s ease-in-out;
+    box-shadow: 0 20px -10px var(--primary-color);
+
+}   
+.float-element:nth-child(3)
+{
+    background: #ea4335;
+    transition: .3s ease-in-out;
+    box-shadow: 0 20px -10px var(--primary-color);
+
+}
+
+@-webkit-keyframes come-in
+{
+0%
+{
+    transition: .3s ease-in-out;
+    opacity: 0;
+    bottom: -200px;
+}
+30%{
+    transform: translateY(0px) scale(1.2);
+}
+70%{
+    /* transform: translateY(50px) scale(.4); */
+}
+100%{
+    transform: scale(1) translateY(5px);
+    transition: .3s ease-in-out;
+    opacity: 1;
+}
+}
+@keyframes come-in
+{
+0%
+{
+    transition: .3s ease-in-out;
+    opacity: 0;
+    bottom: -200px;
+}
+30%{
+    transform: translateY(0px) scale(1.2);
+}
+70%{
+    /* transform: translateY(50px) scale(.4); */
+}
+100%{
+    transform: scale(1) translateY(5px);
+    transition: .3s ease-in-out;
+    opacity: 1;
+}
+}
+.floating-container:hover .element-container .float-element:nth-child(1)
+{
+    transition: .3s ease-in-out;
+    animation: come-in .4s forwards .3s;
+}
+.floating-container:hover .element-container .float-element:nth-child(2)
+{
+    animation: come-in .4s forwards .2s;
+    transition: .3s ease-in-out;
+    
+}
+.floating-container:hover .element-container .float-element:nth-child(3)
+{
+    animation: come-in .4s forwards .1s;
+    transition: .3s ease-in-out;
+    
+}
